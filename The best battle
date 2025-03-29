@@ -1,0 +1,136 @@
+import random
+print("Prepare for battle! Gengar vs. Incineroar!")
+p = (input("Whom Do you want to battle with"))
+e = "Gengar"
+f = "Incineroar"
+if p == e:
+ print("Hurray!You have choosed the goat of Pokemon.Go Gengar!")
+ geng={  "Shadow Ball": 90,
+           "Dazzling gleam": 85,
+           "Thunderbolt": 90,
+           "Focus Punch": 150,
+           "Sludge Bomb": 90,
+           "Bug Buzz": 90,}
+ print()
+ print("Gengar's moves:")
+ for move, damage in geng.items():
+      print(f"{move}: {damage} damage")
+ print()
+ print("Computer has choosed Incineroar")  
+ print()
+ print("Type Effectiveness against incinarorar")
+ eff={"Fairy":200,
+         "Electric":100,
+         "Ghost":50,
+         "Poison":100,
+         "Bug":100,
+         "Fight":200}
+ for type, effectiveness in eff.items():
+        print(f"{type}: {effectiveness} % damage")
+ j="Shadow Ball"
+ k="Dazzling Gleam"
+ l="Focus Punch"
+ m="Thunderbolt"
+ n="Sludge Bomb"
+ o="Bug Buzz"
+ comlife=250
+ move_choice=input("Chose Your move").title()
+ if move_choice == j:
+    move_type = "Ghost"
+ if move_choice== k:
+    move_type = "Fairy"
+ if move_choice== l:
+    move_type = "Fight"
+ if move_choice== m:
+    move_type = "Electric"
+ if move_choice== n:
+    move_type = "Poison"
+ if move_choice== o:
+    move_type = "Bug"
+ 
+ effectiveness=int(eff[move_type])
+ comlife=200
+ curcomlife=comlife-((damage * effectiveness)/100)
+ if curcomlife <= 0:
+        print("The Pokémon fainted! You won the battle! ")
+        print("Incinaroar has fainted so you have won")
+        print("The pokemon has 0 hp")
+ else:
+      print("Computer's Incineroar has",+curcomlife,"HP left.")
+      incineroar=['Malicious Moonsault', 'Dark Pulse' , 'Flare Biltz' , 'Close Combat' ]
+      moveinc= random.choice(incineroar)
+      print("Incinaroar used " +moveinc,"move")      
+      if moveinc=='Close Combat':
+         print("Gengar is immune to this move")
+      if moveinc=='Malicious Moonsault':
+         print ("Its super effective for gengar")
+      if moveinc=='Dark Pulse':
+         print("Its super effective for Gengar")
+      if moveinc=='Malicious Moonsault':
+         print("Gengar has fainted")
+         print("So you have lost")
+      else:
+          print("Its your turn Again")
+          mov1=input("Choose Your turn")   
+          cucomlife2= curcomlife-((damage*effectiveness)/100)
+          if cucomlife2 <= 0:
+             print("Incineroar has Fainted")
+             print("Incinaroar has fainted so you have won")
+          else:
+             moveic1=random.choice(incineroar)
+             print("Incinaroar used " +moveic1,"move")
+             print("Gengar Has Fainted")
+if p == f:
+   print("You have choosed the Alolan superstar Incinaroar")
+   inc={'Malicious Moonsault': 180,
+        'Dark Pulse': 90,
+        'Flare Blitz':120,
+        'Darkest Latriat':90,
+        'Knock Off':65}
+   for move, damage in inc.items():
+      print(f"{move} {damage} damage") 
+   print()
+   print("Computer has choosed Gengar")
+   print()
+   effect={"Fire":100,
+           "Dark":200}
+   for type, effectiveness in effect.items():
+        print(f"{type}: {effectiveness} % damage")
+   x="Malicious Moonsault"
+   y="Dark Pulse"
+   z="Flare Blitz"
+   aa="Darkest Latriat"
+   ab="Knock Off"
+   gengar=["Shadow Ball","Shadow claw","Dazzling Gleam","Drain Punch"]
+   gengcom=random.choice(gengar)
+   print("Computer has used "+gengcom,"move" )
+   if gengcom=="Dazzling GLeam":
+      print("Its supper effective for Incinaroar")
+      print("Hence it has very less hp left")
+   else:
+      print("Its  effective for Incinaroar")
+      print("So its Your Move")
+   incmove=input("Enter Your Move")
+   if incmove=="Malicious Moonsault":
+      print("Its super effective for Gengar")
+      print()
+      print("Gengar has fainted")
+      print("So you have won")
+   else:
+      print("It is super effective for gengar")
+      print("Its your turn again")
+      compmove2=random.choice(gengar)
+      print("Computer has used "+compmove2,"move")
+      if compmove2=="Dazzling Gleam":
+         print("Its supper effective for Incinaroar")
+         print("Hence it has fainted")
+      else:
+         print("Its not very effective for Incinaroar")
+         print("So its your turn again")
+         incmove2=input("Enter Your Move")
+         if incmove2=="Malicious Moonsault":
+            print("Gengar has fainted")
+            print("So you have won")
+         else:
+            print("Gengar has fainted")
+            print("So you have lost")
